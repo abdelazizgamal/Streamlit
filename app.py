@@ -1,6 +1,4 @@
 import streamlit as st
-import tensorflow as tf
-import streamlit as st
 
 import subprocess
 import sys
@@ -30,9 +28,6 @@ setup_logger()
 # import some common libraries
 import numpy as np
 import os, json, cv2, random
-from google.colab.patches import cv2_imshow
-
-
 import detectron2
 # import some common detectron2 utilities
 from detectron2 import model_zoo
@@ -95,9 +90,8 @@ st.write("""
          )
 
 file = st.file_uploader("Please upload an brain scan file", type=["jpg", "png","jpeg"])
-import cv2
+
 from PIL import Image, ImageOps
-import numpy as np
 st.set_option('deprecation.showfileUploaderEncoding', False)
 cfg = get_cfg()
 def import_and_predict(image_data):
